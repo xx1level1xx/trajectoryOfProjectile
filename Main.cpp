@@ -189,6 +189,9 @@ double cos(double num){
 		return null;
 	}
 	return i;
+        y=cos(x), x=arccos(y)
+        f=arccos(y)-x
+        df/dy = no more
 }
 double sin(double num){
 	double eps = 0.000001;
@@ -206,6 +209,7 @@ double sin(double num){
 		return null;
 	}
 	return i;
+        
 }
 double tan(double num){
 	double eps = 0.000001;
