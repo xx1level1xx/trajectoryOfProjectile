@@ -17,6 +17,8 @@ int main()
 	//double gravity = ;
 	//double angle = ;
 	//double initialVelocity = ;
+        double initialVelocityX = initialVelocity*sin(angle);
+        double initialVelocityY = initialVelocity*cos(angle);
 	//double timeTillLanded = (-initialVelocity + ) / gravity;
 	int numSteps = 9999;
 	double* slopes = new double[numSteps];
@@ -25,6 +27,8 @@ int main()
 	double slope;
 	double* ys = new double[numSteps];
 	double* xs = new double[numSteps];
+        double* vs = new double[numSteps];
+        double* angles = new double[numSteps];
 	double deltaX = 0.01;
 	double angle = pi / 4;
 	slope = sin(angle) / cos(angle);
@@ -32,6 +36,15 @@ int main()
 	xs[0] = deltaX;
 	for (int i = 1; i<=numSteps; i++){
 		ys[i] = slope *  xs[i];
+                initialVelocityY -= gravity*(deltaX/initialVelocityY);
+                vs[i] = initialVelocityY;
+                if(initialVelocity > 0){
+                    angle = arctan(initialVelocityY/initialVelocityX);
+                }
+                else(
+                    angle = -arctan(-initialVelocityY/initialVelocityX);
+                )
+                angles[i] = angle;
 		slope = -0.5*(9.81)*square(xs[i] / initialVelocity*cos(angle)) + xs[i] * tan(angle);
 		slopes[i] = slope;
 		xs[i + 1] += deltaX;
