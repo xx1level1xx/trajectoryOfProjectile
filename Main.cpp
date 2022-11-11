@@ -47,7 +47,7 @@ int main()
                 angles[i] = angle;
 		slope = -0.5*(9.81)*square(xs[i] / initialVelocity*cos(angle)) + xs[i] * tan(angle);
 		slopes[i] = slope;
-		xs[i + 1] += deltaX;
+		xs[i + 1] -= deltaX;
 	}
 	fstream file;
 	file.open("Output.ext");
