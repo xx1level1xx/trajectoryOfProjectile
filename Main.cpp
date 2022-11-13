@@ -34,6 +34,7 @@ int main()
 	slope = sin(angle) / cos(angle);
 	int count = 0;
 	xs[0] = deltaX;
+//While
 	for (int i = 1;; i++){
 		ys[i] = slope *  xs[i]
                 if(ys[i]==0){
