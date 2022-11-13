@@ -34,8 +34,14 @@ int main()
 	slope = sin(angle) / cos(angle);
 	int count = 0;
 	xs[0] = deltaX;
-	for (int i = 1; i<=numSteps; i++){
-		ys[i] = slope *  xs[i];
+	for (int i = 1;; i++){
+		ys[i] = slope *  xs[i]
+                if(ys[i]==0){
+                    break;
+                }
+                else if(numSteps+1==10000){
+                    numSteps += 99999;
+                }
                 initialVelocityY -= gravity*(deltaX/initialVelocityY);
                 vs[i] = initialVelocityY;
                 if(initialVelocity > 0){
