@@ -185,7 +185,7 @@ double cos(double num){
 	double delta = 0.01;
 	if (-pi / 2 < num && num < pi / 2){
 		for (double i = -1; i <= 1; i += delta){
-			if (abs(arccos(i)) < eps){
+			if (abs(arccos(i)) - num < eps){
 				break;
 			}
 		}
@@ -205,7 +205,7 @@ double sin(double num){
 	double delta = 0.01;
 	if (0 < num && num < pi){
 		for (double i = -1; i <= 1; i += delta){
-			if (abs(arcsin(i)) < eps){
+			if (abs(arcsin(i)) - num < eps){
 				break;
 			}
 		}
@@ -223,7 +223,7 @@ double tan(double num){
 	double delta = 0.01;
 	if (-pi / 2 < num && num < pi / 2){
 		for (double i = -1; i <= 1; i += delta){
-			if (abs(arctan(i)) < eps){
+			if (abs(arctan(i)) - num < eps){
 				break;
 			}
 		}
