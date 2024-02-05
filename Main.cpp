@@ -96,7 +96,7 @@ double squareRoot(double num){
 	return numYo;
 }
 double arccos(double num){
-	if (!(-pi / 2 < num && num < pi / 2)){
+	if (!(-pi / 2 < num && num < pi / 2)){// Giraffe with a hump here
 		cout << "not in the domain of acos" << endl;
 		system("pause");
 		return null;
